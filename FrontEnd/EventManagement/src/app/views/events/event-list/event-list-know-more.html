@@ -1,0 +1,22 @@
+<div class="container-fluid">
+
+  <h2 class="card-title">Participants Name List</h2>
+
+
+  <div *ngIf="data.length>0">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of data">  {{item.firstName}}   {{item.lastName}}</li>
+
+    </ul>
+  </div>
+
+  <div *ngIf="data.length==0">
+
+    <div class="alert alert-primary" role="alert">
+      Currently, there are no participants except the host himself.
+    </div>
+  </div>
+
+
+
+</div>

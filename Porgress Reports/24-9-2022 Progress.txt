@@ -1,0 +1,5 @@
+* Add Location Add and View & My Events 
+* Add Create Event (with all Ui required including datepicker and MatSelect + Tabs)
+* UnParticipate and Date format for event Start date
+* add past+ upcoming functionality UI+Backend with reusable components and UI tabs
+* Add new Section "Manage" and Event Edit+ Delete

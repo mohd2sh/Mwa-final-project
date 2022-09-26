@@ -1,0 +1,5 @@
+* Support File Upload from FrontEnd + BackEnd and Using Azure Storage
+* Finlize the project
+* Changes to deploy the app + Fix a silent error that was blocking making a dead lock 
+* Add Participant Dialog + Location Website in all realated area
+* Published the Project

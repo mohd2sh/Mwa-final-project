@@ -1,0 +1,5 @@
+* Support Add/Remove Participants
+* add Angular Default template
+* Add the modules and their hierarchy with lazy loading
+* Add Layout + login and sign up page + user state + install 3rd party UI
+* Add Token and Error Interceptor- add auth guard -Event List

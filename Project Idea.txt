@@ -1,0 +1,15 @@
+Nearby outdoor sports event manager,
+
+Events such as walking, fishing, etc.., where anybody can create an event in predefined locations and the other people in the nearby location can see this event and register for it, 
+
+Use cases:
+*Users can signup to the system
+*Users can login to the system
+*Users can create an event at a specific time and location
+*Users can explore the nearby events
+*Users can register for specific events 
+*Users can unregister for specific events 
+*Users can see their upcoming events 
+*Users can see their old events
+*Users can edit their own created events
+*Users can delete their own created events

@@ -1,0 +1,49 @@
+<div class="container-fluid">
+
+  <p></p>
+
+  <div *ngIf="events.length>0; else noevents">
+    <p></p>
+    <alert type="info">
+      <strong>Registered Events</strong>
+    </alert>
+
+    <mat-card *ngFor="let item of events" style="margin: 3px;">
+      <mat-card-title>{{item.name}}</mat-card-title>
+      <mat-card-content>Event Date: {{item.start.toLocaleString()}}</mat-card-content>
+      <mat-card-content>Event Type: {{item.eventType}}</mat-card-content>
+      <mat-card-content>Location Name: {{item.location.name}}</mat-card-content>
+      <mat-card-content>Number of participants: {{item.participants.length}}</mat-card-content>
+      <mat-card-actions>
+        <button *ngIf="type!=EventPageTypes.manage" mat-button
+          (click)="onUnParticipate(item._id)">Un-Participate</button>
+
+          <button *ngIf="type==EventPageTypes.manage" mat-button
+          (click)="onDeleteEvent(item._id)">Delete</button>
+
+          <button *ngIf="type==EventPageTypes.manage" mat-button
+          (click)="onEditEvent(item._id)">Edit</button>
+      </mat-card-actions>
+
+    </mat-card>
+
+
+  </div>
+
+  <ng-template #noevents>
+    <p></p>
+    <div *ngIf="type!=EventPageTypes.manage">
+      <alert type="info">
+        <strong>Oh!</strong> You dont have any upcoming events.
+      </alert>
+    </div>
+
+    <div *ngIf="type==EventPageTypes.manage">
+      <alert type="info">
+        <strong>Oh!</strong> You didnt create any events.
+      </alert>
+    </div>
+
+  </ng-template>
+
+</div>

@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <p></p>
+  Want to create your event? <button type="button" class="btn btn-light" (click)="onAddEventClick()">Create an
+    Event</button>
+  <div *ngIf="currentLocation!=null; else nolocation">
+    <p></p>
+    <alert type="info">
+      <strong>Available Nearby Events</strong>
+    </alert>
+
+    <div class="row pb-3">
+
+
+      <mat-card class="ml-3 col-md-4" *ngFor="let item of events">
+        <mat-card-header>
+          <mat-card-title>{{item.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image style="max-height: 20rem;" [src]="item.location.image.fileUrl"
+          [alt]="item.location.image.fileName">
+        <mat-card-content>Event Date: <strong>{{item.start.toLocaleString()}} </strong></mat-card-content>
+        <mat-card-content>Event Type: <strong>{{item.eventType}} </strong></mat-card-content>
+        <mat-card-content>Location Name: <strong> {{item.location.name}} <a [href]="item.location.website">Website</a> </strong></mat-card-content>
+        <mat-card-content>Number of participants:<strong> {{item.participants.length}} </strong>
+        </mat-card-content>
+        <mat-card-actions>
+          <button  class="btn btn-primary" (click)="onParticipate(item._id)">Participate in it</button>
+          <button mat-button (click)="onKnowMoreClick(item)">Know More</button>
+        </mat-card-actions>
+
+      </mat-card>
+    </div>
+
+    <!-- <mat-card *ngFor="let item of events">
+      <mat-card-title-group>
+        <mat-card-title>{{item.name}}</mat-card-title>
+        <img mat-card-xl-image [src]="item.location.image.fileUrl">
+      </mat-card-title-group>
+
+      <mat-card-content>Event Date: {{item.start.toLocaleString()}}</mat-card-content>
+      <mat-card-content>Event Type: {{item.eventType}}</mat-card-content>
+      <mat-card-content>Location Name: {{item.location.name}}</mat-card-content>
+      <mat-card-content>Number of participants: {{item.participants.length}}</mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="onParticipate(item._id)">Participate in it</button>
+        <button mat-button>Know More</button>
+      </mat-card-actions>
+
+    </mat-card> -->
+
+    <p></p>
+  </div>
+
+  <ng-template #nolocation>
+    <p></p>
+    <div>
+      <alert type="danger">
+        <strong>Oh snap!</strong> Please Enable your browser location to see the nearby events.
+      </alert>
+    </div>
+
+
+  </ng-template>
+</div>

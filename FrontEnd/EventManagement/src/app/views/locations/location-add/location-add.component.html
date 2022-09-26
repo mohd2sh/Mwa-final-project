@@ -1,0 +1,108 @@
+<div class="container pt-4">
+
+
+  <form [formGroup]="locationForm" (ngSubmit)="addLocation()">
+
+    <div class="form-group row">
+      <label for="name" class="col-sm-2 col-form-label">Location Name</label>
+      <div class="col-sm-10">
+        <input formControlName="name" class="form-control" id="name" aria-describedby="emailHelp"
+          placeholder="Enter location name">
+        <div class="invalid-feedback" style="display: block;"
+          [ngClass]="{'d-none':  !formSubmited || formControls['name'].errors==null}">
+          Please Type Valid Name.
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group row">
+      <label for="lng" class="col-sm-2 col-form-label">Longtitude</label>
+      <div class="col-sm-10">
+        <input formControlName="lng" type="number" class="form-control" id="lng" aria-describedby="emailHelp"
+          placeholder="Enter the longtitude for the place">
+
+        <div class="invalid-feedback" style="display: block;"
+          [ngClass]="{'d-none':  !formSubmited || formControls['lng'].errors==null}">
+          Please Type Valid longtitude.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group row">
+      <label for="lat" class="col-sm-2 col-form-label">Latitude</label>
+      <div class="col-sm-10">
+        <input formControlName="lat" type="number" class="form-control" id="lat"
+          placeholder="Enter the Latitude for the place">
+        <div class="invalid-feedback" style="display: block;"
+          [ngClass]="{'d-none':  !formSubmited || formControls['lat'].errors==null}">
+          Please Type Valid Latitude.
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group row">
+      <label for="website" class="col-sm-2 col-form-label">Enter Location Website</label>
+      <div class="col-sm-10">
+        <input formControlName="website"  class="form-control" id="website"
+          placeholder="Enter the website for the place">
+        <div class="invalid-feedback" style="display: block;"
+          [ngClass]="{'d-none':  !formSubmited || formControls['website'].errors==null}">
+          Please Type Valid Latitude.
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group row">
+      <label for="name" class="col-sm-2 col-form-label">Supported Event</label>
+      <div class="col-sm-10">
+        <mat-form-field class="form-control ">
+          <mat-label>Supported Events</mat-label>
+          <mat-select formControlName="supportedEvents" multiple>
+            <mat-option *ngFor="let item of locationTypes " [value]="item.key">
+
+              {{item.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+
+      <label class="col-sm-2 col-form-label" for="image">
+        <mat-icon>cloud_upload</mat-icon>
+      </label>
+
+
+
+      <div class="col-sm-10">
+        <input id="image" type='file' (change)="onSelectFile($event)">
+        <div class="invalid-feedback" style="display: block;"
+          [ngClass]="{'d-none':  !formSubmited || formControls['image'].errors==null}">
+          Please Upload an Image.
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button class="btn btn-secondary ml-3" (click)="goBack()">Back</button>
+      </div>
+    </div>
+
+
+  </form>
+
+</div>

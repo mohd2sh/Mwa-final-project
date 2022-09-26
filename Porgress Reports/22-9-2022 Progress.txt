@@ -1,0 +1,3 @@
+* Creating the skeleton for the backend
+* Install all the dependencies  in the backend
+* Build initial template for the database

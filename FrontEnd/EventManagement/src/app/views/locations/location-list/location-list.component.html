@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <p></p>
+  <div class="row md-3">
+
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-3">
+      Add new location? <button class="btn btn-primary btn-sm" (click)="onAddLocationClick()">Create a Location</button>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+
+  </div>
+
+  <div class="row pt-2" style="  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);">
+
+    <div class="col-md-4" *ngFor="let item of locations">
+      <div class="card" style="max-width: 23rem;">
+        <img [src]="item.image.fileUrl"
+        width="200"
+        style="max-height: 20rem;"
+          class="card-img-top" alt="Fissure in Sandstone" />
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">
+            Supported Events:
+            <li *ngFor="let tag of item.supportedEvents">
+              {{tag}}
+            </li>
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

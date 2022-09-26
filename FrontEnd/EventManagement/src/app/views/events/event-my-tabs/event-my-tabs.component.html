@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <!--Todo lazy load tab contents-->
+  <mat-tab-group>
+    <mat-tab label="Up Coming Events">
+      <event-my [type]="type.upcoming"></event-my>
+    </mat-tab>
+    <mat-tab label="Past Events">
+      <event-my [type]="type.past"></event-my>
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>
